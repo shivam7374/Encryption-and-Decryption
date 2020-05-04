@@ -8,7 +8,7 @@ function decryptQueryParams(req, res ,next) {
 
     // TODO: decrypt all query params as per our logic
     
-    console.log(req.query)
+    // console.log(req.query)
 
     for (let q in req.query) 
     {
@@ -39,7 +39,7 @@ function decryptQueryParams(req, res ,next) {
     }
         req.query[q] = swapcase(data)
     }
-    console.log(req.query)
+    // console.log(req.query)
     
     
     next()
