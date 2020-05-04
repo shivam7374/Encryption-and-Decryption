@@ -20,11 +20,14 @@ function decodeQueryBase64(req, res, next) {
     next()
 }
 
-app.get('/eval', decryptQueryParams, decodeQueryBase64, (req, res) => {
+app.get('/eval',  decodeQueryBase64, (req, res) => {
     console.log(req.query)
-
+    let s=req.query.data
     // TODO: eval the code actually
-    res.send('=========== eval result =========')
+    // document.getElementById("demo").innerHTML =req.query;
+    // (index2.html).getElementById("demo").innerHTML =req.query;
+    // res.sendFile(__dirname+'/public/index2.html')
+    res.send('<div> Evaluated Result : <p id="demo">' + req.query['code'] + '</p></div>')
 })
 
 app.listen(4545, () => {
